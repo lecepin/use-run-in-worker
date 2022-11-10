@@ -20,6 +20,8 @@ sortWorker(numbers).then((data) => {
 });
 ```
 
+[online demo](https://lecepin.github.io/use-run-in-worker/)
+
 #### For CDN
 
 ```html
