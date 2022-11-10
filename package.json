@@ -1,6 +1,6 @@
 {
   "name": "use-run-in-worker",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "files": [
     "demo/",
@@ -25,7 +25,8 @@
     "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint \"**/*.{css,scss,less}\"",
-    "lint": "npm run eslint && npm run stylelint"
+    "lint": "npm run eslint && npm run stylelint",
+    "pages": "gh-pages --dist build --dest . --repo https://github.com/lecepin/use-run-in-worker.git"
   },
   "keywords": [
     "react",
@@ -46,7 +47,8 @@
     "eslint": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "stylelint": "^13.7.2"
+    "stylelint": "^13.7.2",
+    "gh-pages": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^16 || ^17"
@@ -55,5 +57,5 @@
     "access": "public"
   },
   "license": "MIT",
-  "homepage": "https://unpkg.com/use-run-in-worker@1.0.1/build/index.html"
+  "homepage": "https://unpkg.com/use-run-in-worker@1.0.3/build/index.html"
 }
