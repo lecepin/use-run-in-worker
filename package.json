@@ -1,0 +1,59 @@
+{
+  "name": "use-run-in-worker",
+  "version": "1.0.1",
+  "description": "",
+  "files": [
+    "demo/",
+    "es/",
+    "lib/",
+    "build/",
+    "dist/"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "sideEffects": [
+    "dist/*",
+    "*.scss",
+    "*.less",
+    "*.css"
+  ],
+  "scripts": {
+    "start": "build-scripts start",
+    "build": "build-scripts build && esbuild src/runInWorker.ts --bundle --outfile=dist/runInWorker.js --global-name=runInWorker",
+    "test": "build-scripts test",
+    "prepublishOnly": "npm run build",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "lint": "npm run eslint && npm run stylelint"
+  },
+  "keywords": [
+    "react",
+    "component"
+  ],
+  "dependencies": {
+    "dequal": "^1.0.0"
+  },
+  "devDependencies": {
+    "@iceworks/spec": "^1.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "build-plugin-component": "^1.0.0",
+    "build-scripts": "^1.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "esbuild": "^0.15.13",
+    "eslint": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "stylelint": "^13.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16 || ^17"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "homepage": "https://unpkg.com/use-run-in-worker@1.0.1/build/index.html"
+}
