@@ -15,9 +15,7 @@ import UseRunInWorker from "use-run-in-worker";
 
 const [sortWorker, { kill }] = UseRunInWorker(function () {});
 
-sortWorker(numbers).then((data) => {
-  console.log(data);
-});
+sortWorker(1, 2).then((data) => { });
 ```
 
 [online demo](https://lecepin.github.io/use-run-in-worker/)
@@ -30,7 +28,7 @@ sortWorker(numbers).then((data) => {
 <script>
   const run = runInWorker(function () {});
 
-  run.start(1, 2).then(() => {});
+  run.start(1, 2).then((data) => {});
 </script>
 ```
 
