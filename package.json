@@ -1,6 +1,6 @@
 {
   "name": "use-run-in-worker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "files": [
     "demo/",
@@ -57,5 +57,5 @@
     "access": "public"
   },
   "license": "MIT",
-  "homepage": "https://unpkg.com/use-run-in-worker@1.0.3/build/index.html"
+  "homepage": "https://unpkg.com/use-run-in-worker@1.0.4/build/index.html"
 }

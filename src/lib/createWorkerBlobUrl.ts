@@ -1,7 +1,7 @@
 // import isoworker from 'isoworker'
-import { TRANSFERABLE_TYPE } from '../useWorker'
-import jobRunner from './jobRunner'
-import remoteDepsParser from './remoteDepsParser'
+import { TRANSFERABLE_TYPE } from "../useWorker";
+import jobRunner from "./jobRunner";
+import remoteDepsParser from "./remoteDepsParser";
 
 /**
  * Converts the "fn" function into the syntax needed to be executed within a web worker
@@ -18,7 +18,9 @@ import remoteDepsParser from './remoteDepsParser'
  * .catch(postMessage(['ERROR', error])"
  */
 const createWorkerBlobUrl = (
-  fn: Function, deps: string[], transferable: TRANSFERABLE_TYPE, /* localDeps: () => unknown[], */
+  fn: Function | string,
+  deps: string[],
+  transferable: TRANSFERABLE_TYPE /* localDeps: () => unknown[], */
 ) => {
   // const [context] = isoworker.createContext(localDeps)
   const blobCode = `
@@ -27,10 +29,10 @@ const createWorkerBlobUrl = (
       fn: (${fn}),
       transferable: '${transferable}'
     })
-  `
-  const blob = new Blob([blobCode], { type: 'text/javascript' })
-  const url = URL.createObjectURL(blob)
-  return url
-}
+  `;
+  const blob = new Blob([blobCode], { type: "text/javascript" });
+  const url = URL.createObjectURL(blob);
+  return url;
+};
 
-export default createWorkerBlobUrl
+export default createWorkerBlobUrl;

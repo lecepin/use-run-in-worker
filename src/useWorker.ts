@@ -30,7 +30,7 @@ const DEFAULT_OPTIONS: Options = {
 };
 
 export const useWorker = <T extends (...fnArgs: any[]) => any>(
-  fn: T,
+  fn: T | string,
   options: Options = DEFAULT_OPTIONS
 ) => {
   const [workerStatus, _setWorkerStatus] = React.useState<WORKER_STATUS>(

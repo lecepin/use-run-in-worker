@@ -21,7 +21,25 @@ const App = () => {
   const numbers = [...Array(50_000)].map(() =>
     Math.floor(Math.random() * 1000000)
   );
-  const [sortWorker, { status, kill }] = UseRunInWorker(bubleSort);
+  const [sortWorker, { status, kill }] = UseRunInWorker(`(input) => {
+  let swap;
+  let n = input.length - 1;
+  const sortedArray = input.slice();
+  do {
+    swap = false;
+    for (let index = 0; index < n; index += 1) {
+      if (sortedArray[index] > sortedArray[index + 1]) {
+        const tmp = sortedArray[index];
+        sortedArray[index] = sortedArray[index + 1];
+        sortedArray[index + 1] = tmp;
+        swap = true;
+      }
+    }
+    n -= 1;
+  } while (swap);
+
+  return sortedArray;
+}`);
 
   React.useEffect(() => {
     const loopInterval = setInterval(infiniteLoop, 100);
